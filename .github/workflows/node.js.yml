@@ -37,3 +37,14 @@ jobs:
         server: ftp.vempresarial.cl
         username: devuser@vempresarial.cl
         password: ${{ secrets.password }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/src/**
+          package.json
+          package-lock.json
+          exampledb
+          .eslintrc
+          .gitignore
+          README.md
