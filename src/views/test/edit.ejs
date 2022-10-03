@@ -1,0 +1,14 @@
+<%- include('../templates/header') %>
+<h1>Editar usuarios</h1>
+<form method="post" action="/test/<%= id %>/edit?_method=PUT">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="firstName">Nombres:</label>
+    <input type="text" name="firstName" id="firstName" value="<%= data.firstName %>"> <br>
+    <label for="lastName">Apellidos:</label>
+    <input type="text" name="lastName" id="lastName" value="<%= data.lastName %>"> <br>
+    <label for="age">Edad:</label>
+    <input type="text" name="age" id="age" value="<%= data.age %>"> <br>
+    <input type="submit" value="Guardar"> <br>
+    <a href="/test">Regresar a la lista</a>
+</form>
+<%- include('../templates/footer') %>

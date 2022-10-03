@@ -1,0 +1,32 @@
+<%- include('../templates/header') %>
+<h1>Lista de usuarios</h1>
+<a href="/test/create">Crear</a>
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Años</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.forEach(item => { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.firstName %></td>
+                <td><%= item.lastName %></td>
+                <td><%= item.age %></td>
+                <td><a href="/test/<%= item.id %>/edit">editar</a></td>
+                <td>
+                    <form method="post" action="/test/<%= item.id %>/delete?_method=DELETE">
+                        <input type="submit" value="eliminar">
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include('../templates/footer') %>
