@@ -45,6 +45,7 @@ jobs:
           package.json
           package-lock.json
           exampledb
-          .eslintrc
+          .eslintrc.js
           .gitignore
           README.md
+          .DS_Store
