@@ -5,7 +5,7 @@ import PrincipalRouters from '@app/home/routes/index';
 // export all routes
 const router: Router = Router();
 
-router.use(TestRouters);
 router.use(PrincipalRouters);
+router.use(TestRouters);
 
 export default router;
