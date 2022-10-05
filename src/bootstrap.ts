@@ -20,6 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride.default('_method', { methods: ['POST', 'GET', 'PUT', 'PATCH', 'DELETE'] }));
 
 // routes
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  });
 app.use(AllRoutes);
 
 export default app;
