@@ -49,3 +49,4 @@ jobs:
           .gitignore
           README.md
           .DS_Store
+          /dist/infraestructure/database/data-source.js

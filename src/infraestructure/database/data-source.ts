@@ -8,9 +8,9 @@ const AppDataSource = new DataSource({
     username: consts.DATABASE_USER,
     password: consts.DATABASE_PWD,
     database: consts.DATABASE_NAME,
-    entities: [`${__dirname}/model/**/*.entity.js`],
+    entities: [`${__dirname}/model/**/*.entity.ts`],
     synchronize: true,
-    migrations: [`${__dirname}/migrations/**/*.js`]
+    migrations: [`${__dirname}/migrations/**/*.ts`]
 });
 
 AppDataSource
