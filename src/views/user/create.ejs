@@ -1,0 +1,15 @@
+<%- include('../templates/auth-header') %>
+<h1>Crear usuarios</h1>
+<form method="post" action="/user/create">
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email"><br>
+    <label for="firstName">Nombres:</label>
+    <input type="text" name="firstName" id="firstName"> <br>
+    <label for="lastName">Apellidos:</label>
+    <input type="text" name="lastName" id="lastName"> <br>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+    <input type="submit" value="Guardar"> <br>
+    <a href="/user">Regresar a la lista</a>
+</form>
+<%- include('../templates/footer') %>

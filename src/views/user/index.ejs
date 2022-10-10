@@ -1,0 +1,32 @@
+<%- include('../templates/auth-header') %>
+<h1>Lista de usuarios (cambio)</h1>
+<a href="/user/create">Crear</a>
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Email</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.forEach(item => { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.email %></td>
+                <td><%= item.firstName %></td>
+                <td><%= item.lastName %></td>
+                <td><a href="/user/<%= item.id %>/edit">editar</a></td>
+                <td>
+                    <form method="post" action="/user/<%= item.id %>/delete?_method=DELETE">
+                        <input type="submit" value="eliminar">
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include('../templates/footer') %>

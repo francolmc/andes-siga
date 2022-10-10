@@ -5,14 +5,17 @@ export class User extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column({ unique: true })
+    email: string;
+
     @Column()
     firstName: string;
 
     @Column()
     lastName: string;
 
-    @Column()
-    age: number;
+    @Column({ type: "varchar", length: 250 })
+    password: string
 
     @CreateDateColumn()
     createdAt: Timestamp;

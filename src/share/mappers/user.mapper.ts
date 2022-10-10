@@ -1,4 +1,4 @@
-import { UserEntity } from "../../core/test/models/user.entity";
+import { UserEntity } from "../../core/user/models/user.entity";
 
 export default class UserMapper {
     public ToDomain(user: any): UserEntity {
@@ -6,7 +6,8 @@ export default class UserMapper {
             id: user.id || undefined,
             firstName: user.firstName,
             lastName: user.lastName,
-            age: user.age
+            email: user.email,
+            password: user.password
         };
 
         return userEntity;
@@ -17,7 +18,8 @@ export default class UserMapper {
             id: user.id,
             firstName: user.firstName,
             lastName: user.lastName,
-            age: user.age
+            email: user.email,
+            password: user.password
         };
     }
 
@@ -26,7 +28,8 @@ export default class UserMapper {
             id: user.id,
             firstName: user.firstName,
             lastName: user.lastName,
-            age: user.age
+            email: user.email,
+            password: user.password
         }
     }
 }

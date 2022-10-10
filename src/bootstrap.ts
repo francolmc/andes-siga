@@ -1,4 +1,5 @@
 import express from 'express';
+import session from 'express-session';
 import cors from 'cors';
 import path from 'path';
 import AllRoutes from './app/index';
@@ -18,6 +19,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride.default('_method', { methods: ['POST', 'GET', 'PUT', 'PATCH', 'DELETE'] }));
+app.use(
+    session({
+        secret: '2C44-4D44-WppQ38S',
+        resave: true,
+        saveUninitialized: true
+    })
+);
 
 // routes
 app.use(AllRoutes);
