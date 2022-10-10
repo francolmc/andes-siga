@@ -1,7 +1,7 @@
 import UserRepository from "@infra/database/repository/user-repository";
 import { Service } from "typedi";
 import bcrypt from 'bcrypt';
-import UserMapper from "src/share/mappers/user.mapper";
+import UserMapper from "../../../share/mappers/user.mapper";
 
 @Service()
 export class ValidateService {
