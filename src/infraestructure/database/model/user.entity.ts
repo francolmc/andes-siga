@@ -1,4 +1,14 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
+import {
+    BaseEntity,
+    Column,
+    CreateDateColumn,
+    Entity, ManyToOne,
+    OneToMany,
+    PrimaryGeneratedColumn,
+    Timestamp,
+    UpdateDateColumn
+} from "typeorm";
+import Rol from "@infra/database/model/rol.entity";
 
 @Entity()
 export class User extends BaseEntity {
@@ -22,4 +32,7 @@ export class User extends BaseEntity {
 
     @UpdateDateColumn()
     updatedAt: Timestamp;
+
+    @ManyToOne(() => Rol, (rol) => rol.users)
+    rol: Rol
 }

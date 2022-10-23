@@ -10,7 +10,7 @@
     "copy-views": "cp -R ./src/views/ dist/views",
     "build": "npm run clean && npm run tsc && tsc-alias && npm run copy-public && npm run copy-views",
     "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
-    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/.bin/typeorm -d ./dist/infraestructure/database/data-source.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/.bin/typeorm -d ./src/infraestructure/database/data-source.ts",
     "orm:migration:generate": "npm run typeorm migration:generate",
     "orm:migration:run": "npm run typeorm migration:run",
     "orm:migration:revert": "npm run typeorm migration:revert"

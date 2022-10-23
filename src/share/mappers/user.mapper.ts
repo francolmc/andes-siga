@@ -1,16 +1,14 @@
-import { UserEntity } from "../../core/user/models/user.entity";
+import {UserEntity} from "@core/user/models/user.entity";
 
 export default class UserMapper {
     public ToDomain(user: any): UserEntity {
-        const userEntity: UserEntity = {
+        return {
             id: user.id || undefined,
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,
             password: user.password
         };
-
-        return userEntity;
     }
 
     public ToRepository(user: UserEntity): any {

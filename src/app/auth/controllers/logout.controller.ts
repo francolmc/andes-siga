@@ -7,6 +7,5 @@ export default class LogoutController {
         req.session.destroy(() => {
             res.redirect('/login');
         });
-
     }
 }
