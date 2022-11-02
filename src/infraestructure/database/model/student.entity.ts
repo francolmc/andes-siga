@@ -3,39 +3,34 @@ import {
     Column,
     CreateDateColumn,
     Entity,
-    OneToMany,
     PrimaryColumn,
     Timestamp,
     UpdateDateColumn
 } from 'typeorm';
-import {User} from "@infra/database/model/user.entity";
 
 @Entity()
-export default class Company extends BaseEntity {
+export default class Student extends BaseEntity {
     @PrimaryColumn({ type: 'varchar', length: 12 })
     rut: string;
 
     @Column({ nullable: false })
-    name: string;
-
-    @Column()
-    contactName: string;
-
-    @Column()
-    contactEmail: string;
-
-    @Column()
-    contactPhone: string;
+    firstName: string;
 
     @Column({ nullable: false })
-    isPercentage: boolean;
+    lastName: string;
+
+    @Column({ nullable: false })
+    mothersLastName: string;
+
+    @Column()
+    licenseNumber: string;
+
+    @Column()
+    licenseExpiration: Date;
 
     @CreateDateColumn()
     createdAt: Timestamp;
 
     @UpdateDateColumn()
     updatedAt: Timestamp;
-
-    @OneToMany(() => User, (user) => user.company)
-    users: User[];
 }
