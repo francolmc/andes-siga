@@ -3,12 +3,12 @@ import {
     Column,
     CreateDateColumn,
     Entity, ManyToOne,
-    OneToMany,
     PrimaryGeneratedColumn,
     Timestamp,
     UpdateDateColumn
 } from "typeorm";
 import Rol from "@infra/database/model/rol.entity";
+import Company from "./company.entity";
 
 @Entity()
 export class User extends BaseEntity {
@@ -35,4 +35,7 @@ export class User extends BaseEntity {
 
     @ManyToOne(() => Rol, (rol) => rol.users)
     rol: Rol
+
+    @ManyToOne(() => Company, (company) => company.users)
+    company: Company
 }

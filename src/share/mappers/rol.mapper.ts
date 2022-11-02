@@ -1,24 +1,36 @@
-import {RolEntity} from "@core/rol/models/rol.entity";
+import {CompanyEntity} from "@core/company/models/company.entity";
 
-export default class RolMapper {
-    public toDomain(rol: any): RolEntity {
+export default class CompantMapper {
+    public toDomain(company: any): CompanyEntity {
         return {
-            id: rol.id || undefined,
-            name: rol.name
+            rut: company.rut || undefined,
+            name: company.name,
+            contactName: company.contactName,
+            contactEmail: company.contactEmail,
+            contactPhone: company.contactPhone,
+            isPercentage: company.isPercentage
         };
     }
 
-    public toRepository(rol: RolEntity): any {
+    public toRepository(company: CompanyEntity): any {
         return {
-            id: rol.id,
-            name: rol.name
+            rut: company.rut,
+            name: company.name,
+            contactName: company.contactName,
+            contactEmail: company.contactEmail,
+            contactPhone: company.contactPhone,
+            isPercentage: company.isPercentage
         };
     }
 
-    public toDto(rol: RolEntity): any {
+    public toDto(company: CompanyEntity): any {
         return {
-            id: rol.id,
-            name: rol.name
+            rut: company.rut,
+            name: company.name,
+            contactName: company.contactName,
+            contactEmail: company.contactEmail,
+            contactPhone: company.contactPhone,
+            isPercentage: company.isPercentage
         };
     }
 }
